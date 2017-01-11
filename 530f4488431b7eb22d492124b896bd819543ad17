@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_88a49f58",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-11T18:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab895d6_e84d1bc6",
+      "range": {
+        "startLine": 18,
+        "startChar": 15,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_68d10bcd",
         "filename": "openstack-tacker.spec",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-11T17:00:32Z",
       "side": 1,
       "message": "All these Python requirements should be requirements of python-tacker rather than openstack-tacker, since the python code is there.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 25
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c885b7ae",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-11T18:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab895d6_68d10bcd",
       "range": {
         "startLine": 38,
         "startChar": 0,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_e8927bf5",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-11T18:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab895d6_a8da43e7",
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_c8d777be",
         "filename": "openstack-tacker.spec",
         "patchSetId": 4
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_08908feb",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-11T18:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab895d6_c8d777be",
+      "range": {
+        "startLine": 115,
+        "startChar": 24,
+        "endLine": 115,
+        "endChar": 28
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_e8e43bae",
         "filename": "openstack-tacker.spec",
         "patchSetId": 4
@@ -99,6 +189,30 @@
       "writtenOn": "2017-01-11T17:00:32Z",
       "side": 1,
       "message": "Is this registered anywhere?",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 22
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_28bc736c",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-11T18:39:37Z",
+      "side": 1,
+      "message": "Not sure, where would it be registered if it was?\nI\u0027ve not ever registered a user before.",
+      "parentUuid": "dab895d6_e8e43bae",
       "range": {
         "startLine": 141,
         "startChar": 0,
