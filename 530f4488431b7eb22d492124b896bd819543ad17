@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_e84d1bc6",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T17:00:32Z",
+      "side": 1,
+      "message": "This should be python2-devel (for everything else please use python-xxx). Yes, it sounds strange, but that\u0027s the Fedora guideline: https://fedoraproject.org/wiki/Packaging:Python#BuildRequires",
+      "range": {
+        "startLine": 18,
+        "startChar": 15,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_68d10bcd",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T17:00:32Z",
+      "side": 1,
+      "message": "All these Python requirements should be requirements of python-tacker rather than openstack-tacker, since the python code is there.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 25
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a8da43e7",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T17:00:32Z",
+      "side": 1,
+      "message": "nit:trailing space",
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c8d777be",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T17:00:32Z",
+      "side": 1,
+      "message": "In these cases it\u0027s better to use:\n\n%{__python2} setup.py build_sphinx",
+      "range": {
+        "startLine": 115,
+        "startChar": 24,
+        "endLine": 115,
+        "endChar": 28
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e8e43bae",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T17:00:32Z",
+      "side": 1,
+      "message": "Is this registered anywhere?",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 22
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
