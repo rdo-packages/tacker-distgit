@@ -222,6 +222,30 @@
       "revId": "530f4488431b7eb22d492124b896bd819543ad17",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_13e4443a",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-12T09:38:11Z",
+      "side": 1,
+      "message": "I know there is some place inside Fedora where uids/gids for users are registered and reserved: http://fedoraproject.org/wiki/Packaging:UsersAndGroups#Dynamic_allocation\n\nIf it\u0027s not registered anywhere we should not use a fixed uid, as it could clash with other users. Let\u0027s use https://github.com/rdo-packages/sahara-distgit/blob/rpm-master/openstack-sahara.spec#L189-L198 as a template.",
+      "parentUuid": "dab895d6_28bc736c",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 22
+      },
+      "revId": "530f4488431b7eb22d492124b896bd819543ad17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
