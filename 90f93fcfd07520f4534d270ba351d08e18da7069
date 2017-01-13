@@ -22,6 +22,30 @@
       "revId": "90f93fcfd07520f4534d270ba351d08e18da7069",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_6ea59303",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-01-13T15:18:52Z",
+      "side": 1,
+      "message": "Whoops, I forgot to add those, pushed a new patch with them defined",
+      "parentUuid": "dab895d6_137e04af",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 25
+      },
+      "revId": "90f93fcfd07520f4534d270ba351d08e18da7069",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
