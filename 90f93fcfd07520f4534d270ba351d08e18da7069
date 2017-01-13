@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_137e04af",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-13T09:35:34Z",
+      "side": 1,
+      "message": "We are not defining %{tacker_user} and %{tacker_group} anywhere, so this will fail during installation.",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 25
+      },
+      "revId": "90f93fcfd07520f4534d270ba351d08e18da7069",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
