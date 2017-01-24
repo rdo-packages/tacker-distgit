@@ -185,3 +185,4 @@ exit 0
 %changelog
 * Mon Dec 19 2016 Dan Radez <dradez@redhat.com> - 0.5.0-1
 - Initial Packaging
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/tacker/commit/?id=d311cfb77a58b2e00441afe77ad8e0b9961cb391
