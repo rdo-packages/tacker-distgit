@@ -20,21 +20,6 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  python-eventlet
-BuildRequires:  python-heatclient
-BuildRequires:  python-heat-translator
-BuildRequires:  python-neutronclient
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-db
-BuildRequires:  python-oslo-policy
-BuildRequires:  python-oslo-service
-BuildRequires:  python-oslo-messaging
-BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-paramiko
-BuildRequires:  python-routes
-BuildRequires:  python-tosca-parser
-BuildRequires:  python-webob
 
 Requires: python-%{pypi_name} = %{version}-%{release}
 Requires: python-%{pypi_name}-doc = %{version}-%{release}
@@ -114,7 +99,6 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 # Generate sample config and add the current directory to PYTHONPATH so
 # oslo-config-generator doesn't skip tacker entry points.
 PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/tacker.conf
-#oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/tacker.conf
 
 # generate html docs
 %{__python2} setup.py build_sphinx
