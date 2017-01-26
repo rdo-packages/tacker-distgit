@@ -30,8 +30,6 @@ BuildRequires:  python-oslo-db
 BuildRequires:  python-oslo-policy
 BuildRequires:  python-oslo-service
 BuildRequires:  python-oslo-messaging
-BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-paramiko
 BuildRequires:  python-routes
 BuildRequires:  python-tosca-parser
 BuildRequires:  python-webob
