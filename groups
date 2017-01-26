@@ -1,5 +1,5 @@
-# UUID          Group Name
-False 	Non-Interactive Users
-43186d900e7507dd6226844cd84c2a02b497b9b7       	openstack/tacker-distgit-core
-e0049edc789d60fd46f372540a2e5c640709e421        	openstack/tacker-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+43186d900e7507dd6226844cd84c2a02b497b9b7	openstack/tacker-distgit-core
+e0049edc789d60fd46f372540a2e5c640709e421	openstack/tacker-distgit-ptl
+global:Registered-Users                 	Registered Users
