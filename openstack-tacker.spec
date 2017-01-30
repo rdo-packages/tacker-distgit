@@ -23,6 +23,7 @@ BuildRequires:  python-setuptools
 BuildRequires:  python-eventlet
 BuildRequires:  python-heatclient
 BuildRequires:  python-heat-translator
+BuildRequires:  python-mistralclient
 BuildRequires:  python-neutronclient
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-log
@@ -80,6 +81,7 @@ Requires: python-oslo-serialization
 Requires: python-oslo-service
 Requires: python-oslo-utils
 Requires: python-oslo-sphinx
+Requires: python-mistralclient
 Requires: python-neutronclient
 Requires: python-novaclient
 Requires: python-tosca-parser
