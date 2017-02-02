@@ -6,8 +6,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
-Version:        0.5.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
@@ -130,6 +130,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 # Install config files
 mv %{buildroot}%{_usr}%{_sysconfdir} %{buildroot}
 install -p -D -m 640 etc/tacker.conf %{buildroot}%{_sysconfdir}/tacker/tacker.conf
+
+install -p -D -m 640 tacker/db/migration/alembic.ini %{buildroot}%{python2_sitelib}/tacker/db/migration/alembic.ini
+install -d -m 755 %{buildroot}%{python2_sitelib}/tacker/db/migration/alembic_migrations/versions
+install -p -D -m 640 tacker/db/migration/alembic_migrations/versions/* %{buildroot}%{python2_sitelib}/tacker/db/migration/alembic_migrations/versions/
 
 # Install systemd script
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-tacker-server.service
