@@ -1,20 +1,15 @@
 %global pypi_name tacker
-
-%global tacker_user tacker
-%global tacker_group %{tacker_user}
-
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
-Version:        0.5.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-Source1:        openstack-tacker-server.service
-Source2:        tacker.logrotate
+Source1:        tacker.logrotate
+Source2:        openstack-tacker-server.service
 
 BuildArch:      noarch
 
@@ -37,13 +32,12 @@ BuildRequires:  python-routes
 BuildRequires:  python-tosca-parser
 BuildRequires:  python-webob
 
-Requires: python-%{pypi_name} = %{version}-%{release}
-Requires: python-%{pypi_name}-doc = %{version}-%{release}
+Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
 Requires(pre): shadow-utils
 
 %description
-Support of Tacker for OpenStack.
+OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
 %package -n     python-%{pypi_name}
 Summary:        OpenStack Tacker Service
@@ -90,11 +84,30 @@ Requires: python-crypto
 Requires: python-paramiko
 
 %description -n python-%{pypi_name}
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack
+OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
 
-# Documentation package
+This package contains the Tacker python library.
+
+%package common
+Summary:  %{pypi_name} common files
+Requires: python-%{pypi_name} = %{version}-%{release}
+
+%description common
+OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+
+This package contains the Tacker common files.
+
+%package -n python-%{pypi_name}-tests-unit
+Summary:    Tacker unit tests
+Requires:   python-%{pypi_name} = %{version}-%{release}
+
+%description -n python-%{pypi_name}-tests-unit
+OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+
+This package contains the Tacker unit test files.
+
 %package -n python-%{pypi_name}-doc
-Summary:        Documentation for OpenStack Tacker service
+Summary:    Documentation for OpenStack Tacker service
 
 BuildRequires:  python-sphinx
 
@@ -102,9 +115,7 @@ BuildRequires:  python-sphinx
 Documentation for OpenStack Tacker service
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
@@ -115,8 +126,7 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 
 # Generate sample config and add the current directory to PYTHONPATH so
 # oslo-config-generator doesn't skip tacker entry points.
-PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/tacker.conf
-#oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/tacker.conf
+PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
 %{__python2} setup.py build_sphinx
@@ -126,64 +136,73 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 %py2_install
 
+# Setup directories
+install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
+install -d -m 755 %{buildroot}%{_sharedstatedir}/%{pypi_name}
+install -d -m 755 %{buildroot}%{_localstatedir}/log/%{pypi_name}
 
-# Install config files
-mv %{buildroot}%{_usr}%{_sysconfdir} %{buildroot}
-install -p -D -m 640 etc/tacker.conf %{buildroot}%{_sysconfdir}/tacker/tacker.conf
+# Move config files to proper location
+install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
+mv %{buildroot}/usr/etc/%{pypi_name}/* %{buildroot}%{_sysconfdir}/%{pypi_name}
+mv %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.ini %{buildroot}%{_sysconfdir}/%{pypi_name}/api-paste.ini
 
-# Install systemd script
-install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-tacker-server.service
+# Install logrotate
+install -p -D -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
+
+# Install systemd units
+install -p -D -m 644 %{SOURCE2} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
 
 # remove init script
 rm -r %{buildroot}%{_sysconfdir}/init.d
 
-# Install log file
-install -d -m 755 %{buildroot}%{_localstatedir}/log/tacker
-
-# Install logrotate
-install -p -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/openstack-tacker
-
-
-%pre
-# Origin: http://fedoraproject.org/wiki/Packaging:UsersAndGroups#Dynamic_allocation
-USERNAME=%{tacker_user}
-GROUPNAME=%{tacker_group}
-HOMEDIR=%{_sharedstatedir}/tacker
-getent group $GROUPNAME >/dev/null || groupadd -r $GROUPNAME
-getent passwd $USERNAME >/dev/null || \
-  useradd -r -g $GROUPNAME -G $GROUPNAME -d $HOMEDIR -s /sbin/nologin \
-  -c "Tacker Daemons" $USERNAME
+%pre common
+getent group %{pypi_name} >/dev/null || groupadd -r %{pypi_name}
+getent passwd %{pypi_name} >/dev/null || \
+    useradd -r -g %{pypi_name} -d %{_sharedstatedir}/%{pypi_name} -s /sbin/nologin \
+    -c "OpenStack Tacker Daemons" %{pypi_name}
 exit 0
 
 %post
-%systemd_post openstack-tacker-server.service
+%systemd_post openstack-%{pypi_name}-server.service
 
 %preun
-%systemd_preun openstack-tacker-server.service
+%systemd_preun openstack-%{pypi_name}-server.service
 
 %postun
-%systemd_postun_with_restart openstack-tacker-server.service
+%systemd_postun_with_restart openstack-%{pypi_name}-server.service
+
+%files
+%license LICENSE
+%{_bindir}/%{pypi_name}*
+%{_unitdir}/openstack-%{pypi_name}-server.service
+%attr(-, root, %{service}) %{_sysconfdir}/%{pypi_name}/api-paste.ini
+
+%files -n python-%{pypi_name}-tests-unit
+%license LICENSE
+%{python2_sitelib}/%{service}/tests/unit
 
 %files -n python-%{pypi_name}
 %license LICENSE
-%doc README.rst
-%{python2_sitelib}/tacker*
+%{python2_sitelib}/%{pypi_name}
+%{python2_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{python2_sitelib}/%{pypi_name}/tests
 
-%files
-%{_bindir}/%{pypi_name}*
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/tacker/api-paste.ini
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/tacker/policy.json
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/tacker/tacker.conf
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/tacker/rootwrap.conf
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/tacker.filters
-%{_unitdir}/openstack-tacker-server.service
-%dir %attr(0755, tacker, tacker) %{_localstatedir}/log/tacker
-%config(noreplace) %{_sysconfdir}/logrotate.d/openstack-tacker
+%files common
+%license LICENSE
+$doc README.rst
+%dir %{_sysconfdir}/%{pypi_name}
+%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
+%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/policy.json
+%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
+%dir %{_sysconfdir}/%{pypi_name}/rootwrap.d
+%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/%{pypi_name}/rootwrap.d/%{pypi_name}.filters
+%config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
+%dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
+%dir %{_sharedstatedir}/%{pypi_name}
+%dir %{_datadir}/%{pypi_name}
 
 %files -n python-%{pypi_name}-doc
 %license LICENSE
 %doc doc/build/html
 
 %changelog
-* Mon Dec 19 2016 Dan Radez <dradez@redhat.com> - 0.5.0-1
-- Initial Packaging
