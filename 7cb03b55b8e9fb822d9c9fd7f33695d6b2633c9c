@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ffe4f0ad",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-02-02T20:36:36Z",
+      "side": 1,
+      "message": "This is odd and should already be shipped in the sitelib. Should investigate why this is not the case.",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 150
+      },
+      "revId": "7cb03b55b8e9fb822d9c9fd7f33695d6b2633c9c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
