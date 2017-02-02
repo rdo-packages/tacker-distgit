@@ -6,8 +6,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
-Version:        0.5.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
@@ -36,6 +36,7 @@ BuildRequires:  python-paramiko
 BuildRequires:  python-routes
 BuildRequires:  python-tosca-parser
 BuildRequires:  python-webob
+BuildRequires:  git
 
 Requires: python-%{pypi_name} = %{version}-%{release}
 Requires: python-%{pypi_name}-doc = %{version}-%{release}
@@ -102,7 +103,7 @@ BuildRequires:  python-sphinx
 Documentation for OpenStack Tacker service
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
