@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_826e3bc8",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-02-03T04:08:31Z",
+      "side": 1,
+      "message": "The rpm-master branch is built by DLRN which substitutes \"XXX\" by versions provided by git. In branches like newton-rdo or ocata-rdo you would have real version and release numbers.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "8acb8c96e112a3137c768326a0056e5c7f446187",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a2733fb0",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-02-03T04:08:31Z",
+      "side": 1,
+      "message": "The rpm-master branch is built by DLRN which builds from git source, not from tarballs. This goes in the *-rdo branches which builds from released tarballs.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 89
+      },
+      "revId": "8acb8c96e112a3137c768326a0056e5c7f446187",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_62792793",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-02-03T04:08:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this part, seems odd maybe someone else has a better idea but apparently it works so let\u0027s leave it there for now",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 28
+      },
+      "revId": "8acb8c96e112a3137c768326a0056e5c7f446187",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4274239c",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 13
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-02-03T04:08:31Z",
+      "side": 1,
+      "message": "The reason why there were no tests is because of %{service} instead of %{pypi_name}. Bad copy paste.",
+      "range": {
+        "startLine": 189,
+        "startChar": 22,
+        "endLine": 189,
+        "endChar": 29
+      },
+      "revId": "8acb8c96e112a3137c768326a0056e5c7f446187",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
