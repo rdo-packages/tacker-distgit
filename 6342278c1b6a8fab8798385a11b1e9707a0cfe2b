@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a2aa5fd2",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-03T08:57:24Z",
+      "side": 0,
+      "message": "We still do this in many packages, why remove it?",
+      "revId": "6342278c1b6a8fab8798385a11b1e9707a0cfe2b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
