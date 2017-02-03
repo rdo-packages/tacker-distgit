@@ -212,7 +212,7 @@ exit 0
 %license LICENSE
 %{_bindir}/%{pypi_name}*
 %{_unitdir}/openstack-%{pypi_name}-server.service
-%attr(-, root, %{service}) %{_sysconfdir}/%{pypi_name}/api-paste.ini
+%attr(-, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/api-paste.ini
 
 %files -n python-%{pypi_name}-tests
 %license LICENSE
