@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_b51ff708",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-03T14:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_429b43c9",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 47
+      },
+      "revId": "c9491e8a396c816cf928c7f67edf2f03e2d7ea3c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_62a047f5",
         "filename": "openstack-tacker.spec",
         "patchSetId": 14
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-03T08:57:24Z",
       "side": 1,
       "message": "Why tests-unit and not just tests? We have several packages where the tests subpackage is named that way.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 55
+      },
+      "revId": "c9491e8a396c816cf928c7f67edf2f03e2d7ea3c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_952bd32f",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-03T14:12:59Z",
+      "side": 1,
+      "message": "The files that are included are from the dir test/unit?\nshould it still be tests?",
+      "parentUuid": "baada198_62a047f5",
       "range": {
         "startLine": 101,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_75263f6a",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-03T14:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_82a55b06",
+      "range": {
+        "startLine": 121,
+        "startChar": 40,
+        "endLine": 121,
+        "endChar": 53
+      },
+      "revId": "c9491e8a396c816cf928c7f67edf2f03e2d7ea3c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_02b94b2e",
         "filename": "openstack-tacker.spec",
         "patchSetId": 14
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_55313ba1",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-03T14:12:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_02b94b2e",
+      "range": {
+        "startLine": 162,
+        "startChar": 20,
+        "endLine": 162,
+        "endChar": 31
+      },
+      "revId": "c9491e8a396c816cf928c7f67edf2f03e2d7ea3c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_827c7b74",
         "filename": "openstack-tacker.spec",
         "patchSetId": 14
@@ -105,6 +201,30 @@
       "writtenOn": "2017-02-03T08:57:24Z",
       "side": 1,
       "message": "Is this the proper directory for tacker rootwrap.d files? I thought they were all in a single location",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 43
+      },
+      "revId": "c9491e8a396c816cf928c7f67edf2f03e2d7ea3c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_352cc74a",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 14
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 336
+      },
+      "writtenOn": "2017-02-03T14:12:59Z",
+      "side": 1,
+      "message": "right according to the build it\u0027s in /etc/ not in /etc/tacker\nfixed this",
+      "parentUuid": "baada198_827c7b74",
       "range": {
         "startLine": 203,
         "startChar": 0,
