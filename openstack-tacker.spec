@@ -36,6 +36,7 @@ BuildRequires:  python-webob
 # Test dependencies
 BuildRequires:  python-cliff
 BuildRequires:  python-fixtures
+BuildRequires:  python-hacking
 BuildRequires:  python-mock
 BuildRequires:  python-ordereddict
 BuildRequires:  python-oslotest
