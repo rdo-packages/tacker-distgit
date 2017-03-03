@@ -191,7 +191,7 @@ rm -rf %{buildroot}/usr/etc/
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
 
 %check
-%{__python2} setup.py testr
+OS_TEST_PATH=./tacker/tests/unit ostestr --black-regex ipv6
 
 %pre common
 getent group %{pypi_name} >/dev/null || groupadd -r %{pypi_name}
