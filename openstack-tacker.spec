@@ -100,6 +100,7 @@ Requires: python-tosca-parser
 Requires: python-heat-translator
 Requires: python-crypto
 Requires: python-paramiko
+Requires: python-pyroute2
 
 %description -n python-%{pypi_name}
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
