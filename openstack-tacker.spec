@@ -47,6 +47,7 @@ BuildRequires:  python-tempest
 BuildRequires:  python-testrepository
 BuildRequires:  python-testtools
 BuildRequires:  python-webtest
+BuildRequires:  python-barbicanclient
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
@@ -101,6 +102,7 @@ Requires: python-heat-translator
 Requires: python-crypto
 Requires: python-paramiko
 Requires: python-pyroute2
+Requires: python-barbicanclient
 
 %description -n python-%{pypi_name}
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
