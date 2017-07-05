@@ -28,7 +28,6 @@ BuildRequires:  python-oslo-db
 BuildRequires:  python-oslo-policy
 BuildRequires:  python-oslo-service
 BuildRequires:  python-oslo-messaging
-BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-paramiko
 BuildRequires:  python-routes
 BuildRequires:  python-tosca-parser
@@ -144,7 +143,7 @@ This package contains the Tacker unit and functional test files.
 Summary:    Documentation for OpenStack Tacker service
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Tacker service
@@ -164,7 +163,7 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
