@@ -70,38 +70,38 @@ Requires: python-anyjson
 Requires: python-babel
 Requires: python-eventlet
 Requires: python-requests
-Requires: python-keystonemiddleware
+Requires: python-keystonemiddleware >= 4.12.0
 Requires: python-kombu
 Requires: python-netaddr
 Requires: python-sqlalchemy
 Requires: python-webob
-Requires: python-heatclient
-Requires: python-keystoneclient
+Requires: python-heatclient >= 1.6.1
+Requires: python-keystoneclient >= 1:3.8.0
 Requires: python-alembic
 Requires: python-six
 Requires: python-stevedore
-Requires: python-oslo-concurrency
-Requires: python-oslo-config
-Requires: python-oslo-context
-Requires: python-oslo-db
-Requires: python-oslo-log
-Requires: python-oslo-messaging
-Requires: python-oslo-middleware
-Requires: python-oslo-policy
-Requires: python-oslo-reports
-Requires: python-oslo-rootwrap
-Requires: python-oslo-serialization
-Requires: python-oslo-service
-Requires: python-oslo-utils
-Requires: python-mistralclient
-Requires: python-neutronclient
-Requires: python-novaclient
-Requires: python-tosca-parser
-Requires: python-heat-translator
-Requires: python-crypto
+Requires: python-oslo-concurrency >= 3.8.0
+Requires: python-oslo-config >= 2:4.0.0
+Requires: python-oslo-context >= 2.14.0
+Requires: python-oslo-db >= 4.24.0
+Requires: python-oslo-log >= 3.22.0
+Requires: python-oslo-messaging >= 5.24.2
+Requires: python-oslo-middleware >= 3.27.0
+Requires: python-oslo-policy >= 1.23.0
+Requires: python-oslo-reports >= 0.6.0
+Requires: python-oslo-rootwrap >= 5.0.0
+Requires: python-oslo-serialization >= 1.10.0
+Requires: python-oslo-service >= 1.10.0
+Requires: python-oslo-utils >= 3.20.0
+Requires: python-mistralclient >= 3.1.0
+Requires: python-neutronclient >= 6.3.0
+Requires: python-novaclient >= 1:9.0.0
+Requires: python-tosca-parser >= 0.8.1
+Requires: python-heat-translator  >= 0.4.0
+Requires: python-cryptography
 Requires: python-paramiko
 Requires: python-pyroute2
-Requires: python-barbicanclient
+Requires: python-barbicanclient >= 4.0.0
 
 %description -n python-%{pypi_name}
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
@@ -144,6 +144,8 @@ Summary:    Documentation for OpenStack Tacker service
 
 BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
+BuildRequires:  python-oslo-reports
+BuildRequires:  python-openstack-mistral
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Tacker service
