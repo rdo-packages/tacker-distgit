@@ -11,6 +11,7 @@ URL:            https://launchpad.net/%{pypi_name}
 Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 Source1:        openstack-tacker-server.service
 Source2:        tacker.logrotate
+Source3:        openstack-tacker-conductor.service
 
 BuildArch:      noarch
 
@@ -191,6 +192,7 @@ rm -rf %{buildroot}/usr/etc/
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
+install -p -D -m 644 %{SOURCE3} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-conductor.service
 
 %check
 OS_TEST_PATH=./tacker/tests/unit ostestr --black-regex ipv6
@@ -204,17 +206,21 @@ exit 0
 
 %post
 %systemd_post openstack-%{pypi_name}-server.service
+%systemd_post openstack-%{pypi_name}-conductor.service
 
 %preun
 %systemd_preun openstack-%{pypi_name}-server.service
+%systemd_preun openstack-%{pypi_name}-conductor.service
 
 %postun
 %systemd_postun_with_restart openstack-%{pypi_name}-server.service
+%systemd_postun_with_restart openstack-%{pypi_name}-conductor.service
 
 %files
 %license LICENSE
 %{_bindir}/%{pypi_name}*
 %{_unitdir}/openstack-%{pypi_name}-server.service
+%{_unitdir}/openstack-%{pypi_name}-conductor.service
 %attr(-, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/api-paste.ini
 
 %files -n python-%{pypi_name}-tests
