@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d3dd4344",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-08-29T13:44:23Z",
+      "side": 1,
+      "message": "I don\u0027t like using this type of wildcards, because they prevent us from noticing the addition of new binaries, like this tacker-conductor :-/.\n\nAnyway, this is unrelated to this review.",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 24
+      },
+      "revId": "5839e090adc4c31190b94a37d57a6d9f2a2d1027",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
