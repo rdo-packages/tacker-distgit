@@ -51,9 +51,7 @@ BuildRequires:  python-webtest
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
 Requires(pre): shadow-utils
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+%{?systemd_requires}
 
 %description
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack
