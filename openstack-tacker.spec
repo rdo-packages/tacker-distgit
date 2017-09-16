@@ -1,6 +1,9 @@
 %global pypi_name tacker
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global common_desc \
+OpenStack Tacker Service is an NFV Orchestrator for OpenStack
+
 Name:           openstack-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -56,7 +59,7 @@ Requires(preun): systemd
 Requires(postun): systemd
 
 %description
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack
+%{common_desc}
 
 %package -n     python-%{pypi_name}
 Summary:        OpenStack Tacker Service
@@ -104,7 +107,7 @@ Requires: python-barbicanclient >= 4.0.0
 Requires: python-pbr
 
 %description -n python-%{pypi_name}
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+%{common_desc}
 
 This package contains the Tacker python library.
 
@@ -113,7 +116,7 @@ Summary:  %{pypi_name} common files
 Requires: python-%{pypi_name} = %{version}-%{release}
 
 %description common
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+%{common_desc}
 
 This package contains the Tacker common files.
 
@@ -135,7 +138,7 @@ Requires:  python-testtools
 Requires:  python-webtest
 
 %description -n python-%{pypi_name}-tests
-OpenStack Tacker Service is an NFV Orchestrator for OpenStack.
+%{common_desc}
 
 This package contains the Tacker unit and functional test files.
 
