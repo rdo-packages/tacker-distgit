@@ -36,6 +36,7 @@ BuildRequires:  python-routes
 BuildRequires:  python-tosca-parser
 BuildRequires:  python-webob
 BuildRequires:  python-barbicanclient
+BuildRequires:  openstack-macros
 # Test dependencies
 BuildRequires:  python-cliff
 BuildRequires:  python-fixtures
@@ -158,7 +159,7 @@ Documentation for OpenStack Tacker service
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
-rm -rf {test-,}requirements.txt tools/{pip,test}-requires
+%py_req_cleanup
 
 %build
 %py2_build
