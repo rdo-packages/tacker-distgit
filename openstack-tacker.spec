@@ -176,9 +176,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
 install -d -m 755 %{buildroot}%{_sharedstatedir}/%{pypi_name}
 install -d -m 755 %{buildroot}%{_localstatedir}/log/%{pypi_name}
+install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}/vim/fernet_keys
 
 # Move config files to proper location
-install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
 mv %{buildroot}/usr/etc/%{pypi_name}/* %{buildroot}%{_sysconfdir}/%{pypi_name}
 mv %{buildroot}/usr/etc/rootwrap.d %{buildroot}%{_sysconfdir}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
@@ -232,7 +232,7 @@ exit 0
 %files common
 %license LICENSE
 %doc README.rst
-%dir %{_sysconfdir}/%{pypi_name}
+%dir %{_sysconfdir}/%{pypi_name}/vim/fernet_keys
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
