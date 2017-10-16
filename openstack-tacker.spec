@@ -16,6 +16,7 @@ Source3:        openstack-tacker-conductor.service
 BuildArch:      noarch
 
 BuildRequires:  git
+BuildRequires:  systemd
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-eventlet
@@ -39,9 +40,12 @@ BuildRequires:  python-cliff
 BuildRequires:  python-fixtures
 BuildRequires:  python-hacking
 BuildRequires:  python-mock
-BuildRequires:  python-ordereddict
 BuildRequires:  python-oslotest
 BuildRequires:  python-os-testr
+# For Fedora, the ostestr binary is provided by the python3 subpackage
+%if 0%{?fedora} >= 24
+BuildRequires:  python3-os-testr
+%endif
 BuildRequires:  python-subunit
 BuildRequires:  python-tackerclient
 BuildRequires:  python-tempest
@@ -123,7 +127,6 @@ Requires:   python-%{pypi_name} = %{version}-%{release}
 Requires:  python-cliff
 Requires:  python-fixtures
 Requires:  python-mock
-Requires:  python-ordereddict
 Requires:  python-oslotest
 Requires:  python-os-testr
 Requires:  python-subunit
