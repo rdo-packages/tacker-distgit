@@ -16,6 +16,24 @@
       "revId": "5929cf9be016da9119bf9c47a229d72145618a00",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_e1da7ae8",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-10-16T11:59:09Z",
+      "side": 1,
+      "message": "Args, of course!",
+      "parentUuid": "fa81d914_61c76a13",
+      "revId": "5929cf9be016da9119bf9c47a229d72145618a00",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
