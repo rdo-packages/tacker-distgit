@@ -39,6 +39,8 @@ BuildRequires:  python-tosca-parser
 BuildRequires:  python-webob
 BuildRequires:  python-barbicanclient
 BuildRequires:  openstack-macros
+BuildRequires:  python-kubernetes
+BuildRequires:  PyYAML
 # Test dependencies
 BuildRequires:  python-cliff
 BuildRequires:  python-fixtures
@@ -106,6 +108,8 @@ Requires: python-paramiko
 Requires: python-pyroute2
 Requires: python-barbicanclient >= 4.0.0
 Requires: python-pbr
+Requires: python-kubernetes
+Requires: PyYAML
 
 %description -n python-%{pypi_name}
 %{common_desc}
