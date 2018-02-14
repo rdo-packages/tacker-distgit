@@ -21,39 +21,39 @@ BuildArch:      noarch
 BuildRequires:  git
 BuildRequires:  systemd
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-eventlet
-BuildRequires:  python-heatclient
-BuildRequires:  python-heat-translator
-BuildRequires:  python-mistralclient
-BuildRequires:  python-neutronclient
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslo-db
-BuildRequires:  python-oslo-policy
-BuildRequires:  python-oslo-service
-BuildRequires:  python-oslo-messaging
-BuildRequires:  python-paramiko
-BuildRequires:  python-routes
-BuildRequires:  python-tosca-parser
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-eventlet
+BuildRequires:  python2-heatclient
+BuildRequires:  python2-heat-translator
+BuildRequires:  python2-mistralclient
+BuildRequires:  python2-neutronclient
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-oslo-db
+BuildRequires:  python2-oslo-policy
+BuildRequires:  python2-oslo-service
+BuildRequires:  python2-oslo-messaging
+BuildRequires:  python2-paramiko
+BuildRequires:  python2-routes
+BuildRequires:  python2-tosca-parser
 BuildRequires:  python-webob
-BuildRequires:  python-barbicanclient
+BuildRequires:  python2-barbicanclient
 BuildRequires:  openstack-macros
-BuildRequires:  python-kubernetes
+BuildRequires:  python2-kubernetes
 BuildRequires:  PyYAML
 # Test dependencies
-BuildRequires:  python-cliff
-BuildRequires:  python-fixtures
-BuildRequires:  python-hacking
-BuildRequires:  python-mock
-BuildRequires:  python-oslotest
+BuildRequires:  python2-cliff
+BuildRequires:  python2-fixtures
+BuildRequires:  python2-hacking
+BuildRequires:  python2-mock
+BuildRequires:  python2-oslotest
 # For Fedora, the ostestr binary is provided by the python3 subpackage
 BuildRequires:  /usr/bin/ostestr
-BuildRequires:  python-subunit
-BuildRequires:  python-tackerclient
-BuildRequires:  python-tempest
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
+BuildRequires:  python2-subunit
+BuildRequires:  python2-tackerclient
+BuildRequires:  python2-tempest
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testtools
 BuildRequires:  python-webtest
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
@@ -72,43 +72,43 @@ Requires: python-paste
 Requires: python-paste-deploy
 Requires: python-routes
 Requires: python-anyjson
-Requires: python-babel
-Requires: python-eventlet
-Requires: python-requests
-Requires: python-keystonemiddleware >= 4.12.0
-Requires: python-kombu
-Requires: python-netaddr
-Requires: python-sqlalchemy
+Requires: python2-babel
+Requires: python2-eventlet
+Requires: python2-requests
+Requires: python2-keystonemiddleware >= 4.17.0
+Requires: python2-kombu
+Requires: python2-netaddr
+Requires: python2-sqlalchemy
 Requires: python-webob
-Requires: python-heatclient >= 1.6.1
-Requires: python-keystoneclient >= 1:3.8.0
-Requires: python-alembic
-Requires: python-six
-Requires: python-stevedore
-Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-config >= 2:4.0.0
-Requires: python-oslo-context >= 2.14.0
-Requires: python-oslo-db >= 4.24.0
-Requires: python-oslo-log >= 3.22.0
-Requires: python-oslo-messaging >= 5.24.2
-Requires: python-oslo-middleware >= 3.27.0
-Requires: python-oslo-policy >= 1.23.0
-Requires: python-oslo-reports >= 0.6.0
-Requires: python-oslo-rootwrap >= 5.0.0
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-oslo-service >= 1.10.0
-Requires: python-oslo-utils >= 3.20.0
-Requires: python-mistralclient >= 3.1.0
-Requires: python-neutronclient >= 6.3.0
-Requires: python-novaclient >= 1:9.0.0
-Requires: python-tosca-parser >= 0.8.1
-Requires: python-heat-translator  >= 0.4.0
-Requires: python-cryptography
-Requires: python-paramiko
-Requires: python-pyroute2
-Requires: python-barbicanclient >= 4.0.0
-Requires: python-pbr
-Requires: python-kubernetes
+Requires: python2-heatclient >= 1.10.0
+Requires: python2-keystoneclient >= 1:3.8.0
+Requires: python2-alembic
+Requires: python2-six
+Requires: python2-stevedore
+Requires: python2-oslo-concurrency >= 3.25.0
+Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-context >= 2.19.2
+Requires: python2-oslo-db >= 4.27.0
+Requires: python2-oslo-log >= 3.36.0
+Requires: python2-oslo-messaging >= 5.29.0
+Requires: python2-oslo-middleware >= 3.31.0
+Requires: python2-oslo-policy >= 1.30.0
+Requires: python2-oslo-reports >= 1.18.0
+Requires: python2-oslo-rootwrap >= 5.8.0
+Requires: python2-oslo-serialization >= 2.18.0
+Requires: python2-oslo-service >= 1.24.0
+Requires: python2-oslo-utils >= 3.33.0
+Requires: python2-mistralclient >= 3.1.0
+Requires: python2-neutronclient >= 6.3.0
+Requires: python2-novaclient >= 9.1.0
+Requires: python2-tosca-parser >= 0.8.1
+Requires: python2-heat-translator  >= 0.4.0
+Requires: python2-cryptography
+Requires: python2-paramiko
+Requires: python2-pyroute2
+Requires: python2-barbicanclient >= 4.0.0
+Requires: python2-pbr
+Requires: python2-kubernetes
 Requires: PyYAML
 
 %description -n python-%{pypi_name}
@@ -129,16 +129,16 @@ This package contains the Tacker common files.
 Summary:    Tacker unit and functional tests
 Requires:   python-%{pypi_name} = %{version}-%{release}
 
-Requires:  python-cliff
-Requires:  python-fixtures
-Requires:  python-mock
-Requires:  python-oslotest
-Requires:  python-os-testr
-Requires:  python-subunit
-Requires:  python-tackerclient
-Requires:  python-tempest
-Requires:  python-testrepository
-Requires:  python-testtools
+Requires:  python2-cliff
+Requires:  python2-fixtures
+Requires:  python2-mock
+Requires:  python2-oslotest
+Requires:  python2-os-testr
+Requires:  python2-subunit
+Requires:  python2-tackerclient
+Requires:  python2-tempest
+Requires:  python2-testrepository
+Requires:  python2-testtools
 Requires:  python-webtest
 
 %description -n python-%{pypi_name}-tests
@@ -149,9 +149,9 @@ This package contains the Tacker unit and functional test files.
 %package -n python-%{pypi_name}-doc
 Summary:    Documentation for OpenStack Tacker service
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-oslo-reports
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-oslo-reports
 BuildRequires:  python-mistral
 
 %description -n python-%{pypi_name}-doc
