@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ab14d0d_07d89952",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-03-13T10:42:52Z",
+      "side": 1,
+      "message": "This works, could also append ||:\nto make it non-fatal and keep the tests running.",
+      "revId": "9e963a1ed6270503a766c8f06c9e1d438489667c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
