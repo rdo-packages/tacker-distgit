@@ -260,3 +260,4 @@ exit 0
 %doc doc/build/html
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/tacker/commit/?id=5442bc717fbdfb2b3019b31da01d4512fcb45c08
