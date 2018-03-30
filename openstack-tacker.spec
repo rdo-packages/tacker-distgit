@@ -160,6 +160,10 @@ Documentation for OpenStack Tacker service
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
+# (TODO) disabling warning-is-error temporarily until https://review.openstack.org/#/c/557728/
+# is merged.
+sed -i 's/^warning-is-error.*/warning-is-error = 0/g' setup.cfg
+
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
 %py_req_cleanup
