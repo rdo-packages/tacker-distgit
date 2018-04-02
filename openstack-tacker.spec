@@ -172,7 +172,9 @@ Documentation for OpenStack Tacker service
 PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 # generate html docs
-sphinx-build -W -b html doc/source doc/build/html
+# (TODO) Remove -W option (warning-is-error) until https://review.openstack.org/#/c/557728 is
+# merged.
+sphinx-build -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
