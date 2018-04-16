@@ -22,6 +22,30 @@
       "revId": "33fdf03aaceb4c4412290746c6a1b5aa529d8b08",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ab14d0d_a2053cc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-04-16T10:38:30Z",
+      "side": 1,
+      "message": "Indeed!\nSo I did intentinally not quickfix this on Friday, to measure maintainers reaction. From rdoinfo:\nmaintainers: \n- dradez@redhat.com\n\n@dradez are tacker RPMs maintained or should be retired from RDO ?",
+      "parentUuid": "1ab14d0d_82eec020",
+      "range": {
+        "startLine": 7,
+        "startChar": 32,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "33fdf03aaceb4c4412290746c6a1b5aa529d8b08",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
