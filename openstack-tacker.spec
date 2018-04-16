@@ -4,6 +4,10 @@
 %global common_desc \
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
+# FIXME(ykarel) Disable doc build until sphinxcontrib-apidoc package is available
+# https://review.rdoproject.org/r/#/c/13280/
+%global with_doc 0
+
 Name:           openstack-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -146,6 +150,7 @@ Requires:  python-webtest
 
 This package contains the Tacker unit and functional test files.
 
+%if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:    Documentation for OpenStack Tacker service
 
@@ -156,6 +161,7 @@ BuildRequires:  python-mistral
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Tacker service
+%endif
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
@@ -171,12 +177,14 @@ Documentation for OpenStack Tacker service
 # oslo-config-generator doesn't skip tacker entry points.
 PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
+%if 0%{?with_doc}
 # generate html docs
 # (TODO) Remove -W option (warning-is-error) until https://review.openstack.org/#/c/557728 is
 # merged.
 sphinx-build -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %py2_install
@@ -257,8 +265,10 @@ exit 0
 %dir %{_sharedstatedir}/%{pypi_name}
 %dir %{_datadir}/%{pypi_name}
 
+%if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %changelog
