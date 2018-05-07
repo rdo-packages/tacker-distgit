@@ -4,9 +4,7 @@
 %global common_desc \
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
-# FIXME(ykarel) Disable doc build until sphinxcontrib-apidoc package is available
-# https://review.rdoproject.org/r/#/c/13280/
-%global with_doc 0
+%global with_doc 1
 
 Name:           openstack-%{pypi_name}
 Version:        XXX
@@ -156,6 +154,7 @@ Summary:    Documentation for OpenStack Tacker service
 
 BuildRequires:  python2-sphinx
 BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-sphinxcontrib-apidoc
 BuildRequires:  python2-oslo-reports
 BuildRequires:  python-mistral
 
@@ -179,9 +178,7 @@ PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --o
 
 %if 0%{?with_doc}
 # generate html docs
-# (TODO) Remove -W option (warning-is-error) until https://review.openstack.org/#/c/557728 is
-# merged.
-sphinx-build -b html doc/source doc/build/html
+sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
