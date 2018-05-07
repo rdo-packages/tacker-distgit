@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_181a456f",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-05-07T11:00:56Z",
+      "side": 1,
+      "message": "new warning is error issues.\n2018-05-07 10:04:58,226 INFO:dlrn-build:DEBUG: /builddir/build/BUILD/tacker-0.9.1.dev69/doc/source/contributor/api/tacker.cmd.eventlet.rst:15:autodoc: failed to import module u\u0027tacker.cmd.eventlet\u0027; the following exception was raised:\n2018-05-07 10:04:58,226 INFO:dlrn-build:DEBUG: Traceback (most recent call last):\n2018-05-07 10:04:58,226 INFO:dlrn-build:DEBUG:   File \"/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py\", line 658, in import_object\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:     __import__(self.modname)\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:   File \"/builddir/build/BUILD/tacker-0.9.1.dev69/tacker/cmd/eventlet/__init__.py\", line 17, in \u003cmodule\u003e\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:     eventlet_utils.monkey_patch()\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:   File \"/builddir/build/BUILD/tacker-0.9.1.dev69/tacker/common/eventlet_utils.py\", line 25, in monkey_patch\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:     p_c_e \u003d importutils.import_module(\u0027pyroute2.config.asyncio\u0027)\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:   File \"/usr/lib/python2.7/site-packages/oslo_utils/importutils.py\", line 73, in import_module\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG:     __import__(import_str)\n2018-05-07 10:04:58,227 INFO:dlrn-build:DEBUG: ImportError: No module named pyroute2.config.asyncio\n2018-05-07 10:04:58,410 INFO:dlrn-build:DEBUG: RPM build errors:\n2018-05-07 10:04:58,410 INFO:dlrn-build:DEBUG: error: Bad exit status from /var/tmp/rpm-tmp.vzBpwc (%build)\n2018-05-07 10:04:58,410 INFO:dlrn-build:DEBUG:     Bad exit status from /var/tmp/rpm-tmp.vzBpwc (%build)\n2018-05-07 10:04:58,435 INFO:dlrn-build:DEBUG: Child return code was: 1",
+      "range": {
+        "startLine": 181,
+        "startChar": 13,
+        "endLine": 181,
+        "endChar": 15
+      },
+      "revId": "c801fe48354e06ffcd3136485a1840779e153c94",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
