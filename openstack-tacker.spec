@@ -24,6 +24,7 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  systemd
+BuildRequires:  python2-castellan
 BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-eventlet
@@ -77,6 +78,7 @@ Requires: python-paste-deploy
 Requires: python-routes
 Requires: python-anyjson
 Requires: python2-babel
+Requires: python2-castellan
 Requires: python2-eventlet
 Requires: python2-requests
 Requires: python2-keystonemiddleware >= 4.17.0
