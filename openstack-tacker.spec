@@ -91,8 +91,8 @@ Requires: python2-keystoneclient >= 1:3.8.0
 Requires: python2-alembic
 Requires: python2-six
 Requires: python2-stevedore
-Requires: python2-oslo-concurrency >= 3.25.0
-Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-concurrency >= 3.26.0
+Requires: python2-oslo-config >= 2:5.2.0
 Requires: python2-oslo-context >= 2.19.2
 Requires: python2-oslo-db >= 4.27.0
 Requires: python2-oslo-log >= 3.36.0
@@ -105,14 +105,14 @@ Requires: python2-oslo-serialization >= 2.18.0
 Requires: python2-oslo-service >= 1.24.0
 Requires: python2-oslo-utils >= 3.33.0
 Requires: python2-mistralclient >= 3.1.0
-Requires: python2-neutronclient >= 6.3.0
+Requires: python2-neutronclient >= 6.7.0
 Requires: python2-novaclient >= 9.1.0
 Requires: python2-tosca-parser >= 0.8.1
-Requires: python2-heat-translator  >= 0.4.0
+Requires: python2-heat-translator >= 1.1.0
 Requires: python2-cryptography
 Requires: python2-paramiko
 Requires: python2-pyroute2
-Requires: python2-barbicanclient >= 4.0.0
+Requires: python2-barbicanclient >= 4.5.2
 Requires: python2-pbr
 Requires: python2-kubernetes
 Requires: PyYAML
