@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %global pypi_name tacker
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -24,42 +35,48 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  systemd
-BuildRequires:  python2-castellan
-BuildRequires:  python2-devel
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-eventlet
-BuildRequires:  python2-heatclient
-BuildRequires:  python2-heat-translator
-BuildRequires:  python2-mistralclient
-BuildRequires:  python2-neutronclient
-BuildRequires:  python2-oslo-config
-BuildRequires:  python2-oslo-log
-BuildRequires:  python2-oslo-db
-BuildRequires:  python2-oslo-policy
-BuildRequires:  python2-oslo-service
-BuildRequires:  python2-oslo-messaging
-BuildRequires:  python2-paramiko
-BuildRequires:  python2-routes
-BuildRequires:  python2-tosca-parser
-BuildRequires:  python-webob
-BuildRequires:  python2-barbicanclient
+BuildRequires:  python%{pyver}-castellan
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-eventlet
+BuildRequires:  python%{pyver}-heatclient
+BuildRequires:  python%{pyver}-heat-translator
+BuildRequires:  python%{pyver}-mistralclient
+BuildRequires:  python%{pyver}-neutronclient
+BuildRequires:  python%{pyver}-oslo-config
+BuildRequires:  python%{pyver}-oslo-log
+BuildRequires:  python%{pyver}-oslo-db
+BuildRequires:  python%{pyver}-oslo-policy
+BuildRequires:  python%{pyver}-oslo-service
+BuildRequires:  python%{pyver}-oslo-messaging
+BuildRequires:  python%{pyver}-paramiko
+BuildRequires:  python%{pyver}-routes
+BuildRequires:  python%{pyver}-tosca-parser
+BuildRequires:  python%{pyver}-webob
+BuildRequires:  python%{pyver}-barbicanclient
 BuildRequires:  openstack-macros
-BuildRequires:  python2-kubernetes
+BuildRequires:  python%{pyver}-kubernetes
 BuildRequires:  PyYAML
 # Test dependencies
-BuildRequires:  python2-cliff
-BuildRequires:  python2-fixtures
-BuildRequires:  python2-hacking
-BuildRequires:  python2-mock
-BuildRequires:  python2-oslotest
+BuildRequires:  python%{pyver}-cliff
+BuildRequires:  python%{pyver}-fixtures
+BuildRequires:  python%{pyver}-hacking
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-oslotest
 # For Fedora, the ostestr binary is provided by the python3 subpackage
 BuildRequires:  /usr/bin/ostestr
-BuildRequires:  python2-subunit
-BuildRequires:  python2-tackerclient
-BuildRequires:  python2-tempest
-BuildRequires:  python2-testrepository
-BuildRequires:  python2-testtools
+BuildRequires:  python%{pyver}-subunit
+BuildRequires:  python%{pyver}-tackerclient
+BuildRequires:  python%{pyver}-tempest
+BuildRequires:  python%{pyver}-testrepository
+BuildRequires:  python%{pyver}-testtools
+
+# Handle python2 exception
+%if %{pyver} == 2
 BuildRequires:  python-webtest
+%else
+BuildRequires:  python%{pyver}-webtest
+%endif
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
@@ -69,99 +86,116 @@ Requires(pre): shadow-utils
 %description
 %{common_desc}
 
-%package -n     python-%{pypi_name}
+%package -n     python%{pyver}-%{pypi_name}
 Summary:        OpenStack Tacker Service
-%{?python_provide:%python_provide python2-%{pypi_name}}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
+Requires: python%{pyver}-routes
+Requires: python%{pyver}-babel
+Requires: python%{pyver}-castellan
+Requires: python%{pyver}-eventlet
+Requires: python%{pyver}-requests
+Requires: python%{pyver}-keystonemiddleware >= 4.17.0
+Requires: python%{pyver}-kombu
+Requires: python%{pyver}-netaddr
+Requires: python%{pyver}-sqlalchemy
+Requires: python%{pyver}-webob
+Requires: python%{pyver}-heatclient >= 1.10.0
+Requires: python%{pyver}-keystoneclient >= 1:3.8.0
+Requires: python%{pyver}-alembic
+Requires: python%{pyver}-six
+Requires: python%{pyver}-stevedore
+Requires: python%{pyver}-oslo-concurrency >= 3.26.0
+Requires: python%{pyver}-oslo-config >= 2:5.2.0
+Requires: python%{pyver}-oslo-context >= 2.19.2
+Requires: python%{pyver}-oslo-db >= 4.27.0
+Requires: python%{pyver}-oslo-log >= 3.36.0
+Requires: python%{pyver}-oslo-messaging >= 5.29.0
+Requires: python%{pyver}-oslo-middleware >= 3.31.0
+Requires: python%{pyver}-oslo-policy >= 1.30.0
+Requires: python%{pyver}-oslo-reports >= 1.18.0
+Requires: python%{pyver}-oslo-rootwrap >= 5.8.0
+Requires: python%{pyver}-oslo-serialization >= 2.18.0
+Requires: python%{pyver}-oslo-service >= 1.24.0
+Requires: python%{pyver}-oslo-utils >= 3.33.0
+Requires: python%{pyver}-mistralclient >= 3.1.0
+Requires: python%{pyver}-neutronclient >= 6.7.0
+Requires: python%{pyver}-novaclient >= 9.1.0
+Requires: python%{pyver}-tosca-parser >= 0.8.1
+Requires: python%{pyver}-heat-translator >= 1.1.0
+Requires: python%{pyver}-cryptography
+Requires: python%{pyver}-paramiko
+Requires: python%{pyver}-pyroute2
+Requires: python%{pyver}-barbicanclient >= 4.5.2
+Requires: python%{pyver}-pbr
+Requires: python%{pyver}-kubernetes
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires: python-paste
 Requires: python-paste-deploy
-Requires: python-routes
 Requires: python-anyjson
-Requires: python2-babel
-Requires: python2-castellan
-Requires: python2-eventlet
-Requires: python2-requests
-Requires: python2-keystonemiddleware >= 4.17.0
-Requires: python2-kombu
-Requires: python2-netaddr
-Requires: python2-sqlalchemy
-Requires: python-webob
-Requires: python2-heatclient >= 1.10.0
-Requires: python2-keystoneclient >= 1:3.8.0
-Requires: python2-alembic
-Requires: python2-six
-Requires: python2-stevedore
-Requires: python2-oslo-concurrency >= 3.26.0
-Requires: python2-oslo-config >= 2:5.2.0
-Requires: python2-oslo-context >= 2.19.2
-Requires: python2-oslo-db >= 4.27.0
-Requires: python2-oslo-log >= 3.36.0
-Requires: python2-oslo-messaging >= 5.29.0
-Requires: python2-oslo-middleware >= 3.31.0
-Requires: python2-oslo-policy >= 1.30.0
-Requires: python2-oslo-reports >= 1.18.0
-Requires: python2-oslo-rootwrap >= 5.8.0
-Requires: python2-oslo-serialization >= 2.18.0
-Requires: python2-oslo-service >= 1.24.0
-Requires: python2-oslo-utils >= 3.33.0
-Requires: python2-mistralclient >= 3.1.0
-Requires: python2-neutronclient >= 6.7.0
-Requires: python2-novaclient >= 9.1.0
-Requires: python2-tosca-parser >= 0.8.1
-Requires: python2-heat-translator >= 1.1.0
-Requires: python2-cryptography
-Requires: python2-paramiko
-Requires: python2-pyroute2
-Requires: python2-barbicanclient >= 4.5.2
-Requires: python2-pbr
-Requires: python2-kubernetes
 Requires: PyYAML
+%else
+Requires: python%{pyver}-paste
+Requires: python%{pyver}-paste-deploy
+Requires: python%{pyver}-anyjson
+Requires: python%{pyver}-PyYAML
+%endif
 
-%description -n python-%{pypi_name}
+%description -n python%{pyver}-%{pypi_name}
 %{common_desc}
 
 This package contains the Tacker python library.
 
 %package common
 Summary:  %{pypi_name} common files
-Requires: python-%{pypi_name} = %{version}-%{release}
+Requires: python%{pyver}-%{pypi_name} = %{version}-%{release}
 
 %description common
 %{common_desc}
 
 This package contains the Tacker common files.
 
-%package -n python-%{pypi_name}-tests
+%package -n python%{pyver}-%{pypi_name}-tests
 Summary:    Tacker unit and functional tests
-Requires:   python-%{pypi_name} = %{version}-%{release}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}-tests}
+Requires:   python%{pyver}-%{pypi_name} = %{version}-%{release}
 
-Requires:  python2-cliff
-Requires:  python2-fixtures
-Requires:  python2-mock
-Requires:  python2-oslotest
-Requires:  python2-os-testr
-Requires:  python2-subunit
-Requires:  python2-tackerclient
-Requires:  python2-tempest
-Requires:  python2-testrepository
-Requires:  python2-testtools
+Requires:  python%{pyver}-cliff
+Requires:  python%{pyver}-fixtures
+Requires:  python%{pyver}-mock
+Requires:  python%{pyver}-oslotest
+Requires:  python%{pyver}-os-testr
+Requires:  python%{pyver}-subunit
+Requires:  python%{pyver}-tackerclient
+Requires:  python%{pyver}-tempest
+Requires:  python%{pyver}-testrepository
+Requires:  python%{pyver}-testtools
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires:  python-webtest
+%else
+Requires:  python%{pyver}-webtest
+%endif
 
-%description -n python-%{pypi_name}-tests
+%description -n python%{pyver}-%{pypi_name}-tests
 %{common_desc}
 
 This package contains the Tacker unit and functional test files.
 
 %if 0%{?with_doc}
-%package -n python-%{pypi_name}-doc
+%package -n python%{pyver}-%{pypi_name}-doc
 Summary:    Documentation for OpenStack Tacker service
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}-doc}
 
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-openstackdocstheme
-BuildRequires:  python2-oslo-reports
-BuildRequires:  python-mistral
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-oslo-reports
+BuildRequires:  python%{pyver}-mistral
 
-%description -n python-%{pypi_name}-doc
+%description -n python%{pyver}-%{pypi_name}-doc
 Documentation for OpenStack Tacker service
 %endif
 
@@ -173,23 +207,23 @@ Documentation for OpenStack Tacker service
 %py_req_cleanup
 
 %build
-%py2_build
+%{pyver_build}
 
 # Generate sample config and add the current directory to PYTHONPATH so
-# oslo-config-generator doesn't skip tacker entry points.
-PYTHONPATH=. oslo-config-generator --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
+# oslo-config-generator-%{pyver} doesn't skip tacker entry points.
+PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=./etc/config-generator.conf --output-file=./etc/%{pypi_name}.conf
 
 %if 0%{?with_doc}
 # generate html docs
 # (TODO) Remove -W option (warning-is-error) until https://review.openstack.org/#/c/557728 is
 # merged.
-sphinx-build -b html doc/source doc/build/html
-# remove the sphinx-build leftovers
+sphinx-build-%{pyver} -b html doc/source doc/build/html
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%py2_install
+%{pyver_install}
 
 # Setup directories
 install -d -m 755 %{buildroot}%{_datadir}/%{pypi_name}
@@ -244,15 +278,15 @@ exit 0
 %{_unitdir}/openstack-%{pypi_name}-conductor.service
 %attr(-, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/api-paste.ini
 
-%files -n python-%{pypi_name}-tests
+%files -n python%{pyver}-%{pypi_name}-tests
 %license LICENSE
-%{python2_sitelib}/%{pypi_name}/tests
+%{pyver_sitelib}/%{pypi_name}/tests
 
-%files -n python-%{pypi_name}
+%files -n python%{pyver}-%{pypi_name}
 %license LICENSE
-%{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/%{pypi_name}-*.egg-info
-%exclude %{python2_sitelib}/%{pypi_name}/tests
+%{pyver_sitelib}/%{pypi_name}
+%{pyver_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{pyver_sitelib}/%{pypi_name}/tests
 
 %files common
 %license LICENSE
@@ -268,7 +302,7 @@ exit 0
 %dir %{_datadir}/%{pypi_name}
 
 %if 0%{?with_doc}
-%files -n python-%{pypi_name}-doc
+%files -n python%{pyver}-%{pypi_name}-doc
 %license LICENSE
 %doc doc/build/html
 %endif
