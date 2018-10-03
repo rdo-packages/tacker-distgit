@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_4e831357",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-10-03T10:31:24Z",
+      "side": 1,
+      "message": "Instead of commenting the full line, it\u0027s better to add || true to keep running tests but ignoring the results. That way  we can monitori the progress on the issue.",
+      "revId": "5ee2aaad1b12fb68d5cfe7e12ae361aa1ce93972",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
