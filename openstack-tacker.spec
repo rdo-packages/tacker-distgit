@@ -81,7 +81,11 @@ BuildRequires:  python%{pyver}-webtest
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
 
 Requires(pre): shadow-utils
+%if 0%{?rhel} && 0%{?rhel} < 8
 %{?systemd_requires}
+%else
+%{?systemd_ordering} # does not exist on EL7
+%endif
 
 %description
 %{common_desc}
