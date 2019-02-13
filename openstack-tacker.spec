@@ -122,6 +122,7 @@ Requires: python%{pyver}-oslo-rootwrap >= 5.8.0
 Requires: python%{pyver}-oslo-serialization >= 2.18.0
 Requires: python%{pyver}-oslo-service >= 1.24.0
 Requires: python%{pyver}-oslo-utils >= 3.33.0
+Requires: python%{pyver}-oslo-versionedobjects >= 1.33.3
 Requires: python%{pyver}-mistralclient >= 3.1.0
 Requires: python%{pyver}-neutronclient >= 6.7.0
 Requires: python%{pyver}-novaclient >= 9.1.0
