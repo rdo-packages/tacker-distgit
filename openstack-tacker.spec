@@ -15,9 +15,7 @@
 %global common_desc \
 OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
-# FIXME(ykarel) Disable doc build until sphinxcontrib-apidoc package is available
-# https://review.rdoproject.org/r/#/c/13280/
-%global with_doc 0
+%global with_doc 1
 
 Name:           openstack-%{pypi_name}
 Version:        XXX
@@ -121,13 +119,14 @@ Requires: python%{pyver}-oslo-reports >= 1.18.0
 Requires: python%{pyver}-oslo-rootwrap >= 5.8.0
 Requires: python%{pyver}-oslo-serialization >= 2.18.0
 Requires: python%{pyver}-oslo-service >= 1.24.0
+Requires: python%{pyver}-oslo-upgradecheck >= 0.1.0
 Requires: python%{pyver}-oslo-utils >= 3.33.0
 Requires: python%{pyver}-oslo-versionedobjects >= 1.33.3
 Requires: python%{pyver}-mistralclient >= 3.1.0
 Requires: python%{pyver}-neutronclient >= 6.7.0
-Requires: python%{pyver}-novaclient >= 9.1.0
+Requires: python%{pyver}-novaclient >= 1:9.1.0
 Requires: python%{pyver}-tosca-parser >= 0.8.1
-Requires: python%{pyver}-heat-translator >= 1.1.0
+Requires: python%{pyver}-heat-translator >= 1.3.0
 Requires: python%{pyver}-cryptography
 Requires: python%{pyver}-paramiko
 Requires: python%{pyver}-pyroute2
@@ -197,6 +196,7 @@ Summary:    Documentation for OpenStack Tacker service
 
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-sphinxcontrib-apidoc
 BuildRequires:  python%{pyver}-oslo-reports
 BuildRequires:  python%{pyver}-mistral
 
