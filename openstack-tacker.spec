@@ -2,7 +2,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-%{pypi_name}
-Version:        0.8.1
+Version:        0.8.2
 Release:        1%{?dist}
 Summary:        OpenStack Tacker Service
 
@@ -253,6 +253,9 @@ exit 0
 %doc doc/build/html
 
 %changelog
+* Fri Apr 26 2019 RDO <dev@lists.rdoproject.org> 0.8.2-1
+- Update to 0.8.2
+
 * Tue Jan 16 2018 RDO <dev@lists.rdoproject.org> 0.8.1-1
 - Update to 0.8.1
 
