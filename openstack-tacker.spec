@@ -54,7 +54,6 @@ BuildRequires:  python%{pyver}-webob
 BuildRequires:  python%{pyver}-barbicanclient
 BuildRequires:  openstack-macros
 BuildRequires:  python%{pyver}-kubernetes
-BuildRequires:  PyYAML
 # Test dependencies
 BuildRequires:  python%{pyver}-cliff
 BuildRequires:  python%{pyver}-fixtures
@@ -72,8 +71,10 @@ BuildRequires:  python%{pyver}-testtools
 # Handle python2 exception
 %if %{pyver} == 2
 BuildRequires:  python-webtest
+BuildRequires:  PyYAML
 %else
 BuildRequires:  python%{pyver}-webtest
+BuildRequires:  python%{pyver}-PyYAML
 %endif
 
 Requires: openstack-%{pypi_name}-common = %{version}-%{release}
