@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61cd611b_ff09b5ec",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2019-09-20T16:05:43Z",
+      "side": 1,
+      "message": "Bad idea. It seems to have removed all empty __init__.py files",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 258,
+        "endChar": 33
+      },
+      "revId": "ffb34ce30d92a752cd59a2a20241cd5e4b76bf87",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
