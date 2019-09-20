@@ -254,6 +254,9 @@ rm -rf %{buildroot}/usr/etc/
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-server.service
 install -p -D -m 644 %{SOURCE3} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-conductor.service
 
+# remove zero length files
+find %{buildroot} -size 0 -delete
+
 %check
 #FIXME(ykarel) Enable once https://bugs.launchpad.net/tacker/+bug/1753645 is fixed.
 #OS_TEST_PATH=./tacker/tests/unit ostestr --black-regex ipv6
@@ -299,7 +302,6 @@ exit 0
 %doc README.rst
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
-%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/%{pypi_name}.filters
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
