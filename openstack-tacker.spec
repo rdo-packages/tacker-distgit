@@ -60,6 +60,7 @@ BuildRequires:  python%{pyver}-fixtures
 BuildRequires:  python%{pyver}-hacking
 BuildRequires:  python%{pyver}-mock
 BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python%{pyver}-glance-store
 # For Fedora, the ostestr binary is provided by the python3 subpackage
 BuildRequires:  /usr/bin/ostestr
 BuildRequires:  python%{pyver}-subunit
@@ -97,6 +98,7 @@ Requires: python%{pyver}-routes
 Requires: python%{pyver}-babel
 Requires: python%{pyver}-castellan
 Requires: python%{pyver}-eventlet
+Requires: python%{pyver}-glance-store >= 0.26.1
 Requires: python%{pyver}-requests
 Requires: python%{pyver}-keystonemiddleware >= 4.17.0
 Requires: python%{pyver}-kombu
@@ -225,7 +227,7 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=./etc/config-generator
 # merged.
 sphinx-build-%{pyver} -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
-rm -rf doc/build/html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo,htaccess} doc/build/html/_downloads
 %endif
 
 %install
@@ -299,7 +301,6 @@ exit 0
 %doc README.rst
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
-%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/%{pypi_name}.filters
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
