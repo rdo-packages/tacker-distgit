@@ -225,7 +225,7 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file=./etc/config-generator
 # merged.
 sphinx-build-%{pyver} -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
-rm -rf doc/build/html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo,htaccess} doc/build/html/_downloads
 %endif
 
 %install
@@ -299,7 +299,6 @@ exit 0
 %doc README.rst
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
-%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/policy.json
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/%{pypi_name}.filters
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
