@@ -130,7 +130,7 @@ Requires: python%{pyver}-mistralclient >= 3.1.0
 Requires: python%{pyver}-neutronclient >= 6.7.0
 Requires: python%{pyver}-novaclient >= 1:9.1.0
 Requires: python%{pyver}-tosca-parser >= 0.8.1
-Requires: python%{pyver}-heat-translator >= 1.3.0
+Requires: python%{pyver}-heat-translator >= 1.3.1
 Requires: python%{pyver}-cryptography
 Requires: python%{pyver}-paramiko
 Requires: python%{pyver}-pyroute2
