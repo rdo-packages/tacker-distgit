@@ -13,7 +13,7 @@ Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        openstack-tacker-server.service
 Source2:        tacker.logrotate
 Source3:        openstack-tacker-conductor.service
