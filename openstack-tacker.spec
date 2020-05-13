@@ -1,4 +1,3 @@
-%global milestone .0rc2
 %global pypi_name tacker
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -9,13 +8,12 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
 Name:           openstack-%{pypi_name}
 Version:        3.0.0
-Release:        0.2%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
-# patches_base=3.0.0.0rc2
 
 Source1:        openstack-tacker-server.service
 Source2:        tacker.logrotate
@@ -291,6 +289,9 @@ exit 0
 %endif
 
 %changelog
+* Wed May 13 2020 RDO <dev@lists.rdoproject.org> 3.0.0-1
+- Update to 3.0.0
+
 * Mon May 04 2020 RDO <dev@lists.rdoproject.org> 3.0.0-0.2.0rc1
 - Update to 3.0.0.0rc2
 
