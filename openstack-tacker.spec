@@ -99,7 +99,7 @@ Requires: python3-stevedore
 Requires: python3-oslo-concurrency >= 3.26.0
 Requires: python3-oslo-config >= 2:5.2.0
 Requires: python3-oslo-context >= 2.19.2
-Requires: python3-oslo-db >= 4.27.0
+Requires: python3-oslo-db >= 5.0.0
 Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-messaging >= 9.3.0
 Requires: python3-oslo-middleware >= 3.31.0
@@ -114,7 +114,7 @@ Requires: python3-oslo-versionedobjects >= 1.33.3
 Requires: python3-mistralclient >= 3.1.0
 Requires: python3-neutronclient >= 6.7.0
 Requires: python3-novaclient >= 1:9.1.0
-Requires: python3-tosca-parser >= 1.4.0
+Requires: python3-tosca-parser >= 1.6.0
 Requires: python3-heat-translator >= 2.0.0
 Requires: python3-cryptography
 Requires: python3-paramiko
@@ -129,6 +129,8 @@ Requires: python3-paste
 Requires: python3-paste-deploy
 Requires: python3-anyjson
 Requires: python3-PyYAML
+Requires: python3-openstacksdk >= 0.44.0
+Requires: python3-rfc3986 >= 1.1.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
