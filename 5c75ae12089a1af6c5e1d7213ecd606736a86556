@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c901c53d_9c23a96e",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-09-28T11:07:58Z",
+      "side": 1,
+      "message": "this can be cleaned up",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 23
+      },
+      "revId": "5c75ae12089a1af6c5e1d7213ecd606736a86556",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
