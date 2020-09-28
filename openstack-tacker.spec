@@ -8,7 +8,7 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
 Name:           openstack-%{pypi_name}
 Version:        3.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
@@ -54,6 +54,7 @@ BuildRequires:  python3-oslotest
 BuildRequires:  python3-glance-store
 # For Fedora, the ostestr binary is provided by the %{__python3} subpackage
 BuildRequires:  /usr/bin/ostestr
+BuildRequires:  python3-sqlalchemy-filters
 BuildRequires:  python3-subunit
 BuildRequires:  python3-tackerclient
 BuildRequires:  python3-tempest
@@ -89,6 +90,7 @@ Requires: python3-keystonemiddleware >= 4.17.0
 Requires: python3-kombu
 Requires: python3-netaddr
 Requires: python3-sqlalchemy
+Requires: python3-sqlalchemy-filters
 Requires: python3-webob
 Requires: python3-heatclient >= 1.10.0
 Requires: python3-keystoneclient >= 1:3.8.0
@@ -289,6 +291,9 @@ exit 0
 %endif
 
 %changelog
+* Wed Sep 30 2020 Javier Peña <jpena@redhat.com> - 3.0.0-2
+- Add sqlalchemy-filters as a requirement
+
 * Wed May 13 2020 RDO <dev@lists.rdoproject.org> 3.0.0-1
 - Update to 3.0.0
 
