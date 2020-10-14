@@ -1,4 +1,5 @@
-%global milestone .0rc3
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %global pypi_name tacker
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -9,19 +10,28 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 
 Name:           openstack-%{pypi_name}
 Version:        4.0.0
-Release:        0.3%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
-# patches_base=4.0.0.0rc3
 
 Source1:        openstack-tacker-server.service
 Source2:        tacker.logrotate
 Source3:        openstack-tacker-conductor.service
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+%endif
 
 BuildRequires:  git
 BuildRequires:  systemd
@@ -187,6 +197,10 @@ Documentation for OpenStack Tacker service
 %endif
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # Remove the requirements file so that pbr hooks don't add it
@@ -294,6 +308,10 @@ exit 0
 %endif
 
 %changelog
+* Wed Oct 14 2020 RDO <dev@lists.rdoproject.org> 4.0.0-1
+- Update to 4.0.0
+- Implement sources verification using upstream gpg signature
+
 * Sat Oct 10 2020 RDO <dev@lists.rdoproject.org> 4.0.0-0.3.0rc2
 - Update to 4.0.0.0rc3
 
