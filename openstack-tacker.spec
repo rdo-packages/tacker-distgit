@@ -32,7 +32,7 @@ BuildArch:      noarch
 BuildRequires:  /usr/bin/gpgv2
 %endif
 
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  systemd
 BuildRequires:  python3-castellan
 BuildRequires:  python3-devel
