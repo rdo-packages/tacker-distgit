@@ -18,7 +18,7 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 %global with_doc 1
 
 Name:           openstack-%{pypi_name}
-Version:        2.0.0
+Version:        2.0.2
 Release:        1%{?dist}
 Summary:        OpenStack Tacker Service
 
@@ -318,6 +318,9 @@ exit 0
 %endif
 
 %changelog
+* Mon Feb 01 2021 RDO <dev@lists.rdoproject.org> 2.0.2-1
+- Update to 2.0.2
+
 * Wed Oct 16 2019 RDO <dev@lists.rdoproject.org> 2.0.0-1
 - Update to 2.0.0
 
