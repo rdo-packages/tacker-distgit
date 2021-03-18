@@ -91,57 +91,60 @@ Requires(pre): shadow-utils
 Summary:        OpenStack Tacker Service
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires: python3-routes
-Requires: python3-castellan
-Requires: python3-eventlet
-Requires: python3-glance-store >= 0.26.1
-Requires: python3-requests
+Requires: python3-routes >= 2.3.1
+Requires: python3-castellan >= 0.16.0
+Requires: python3-eventlet >= 0.18.2
+Requires: python3-glance-store >= 2.4.0
+Requires: python3-requests >= 2.20.0
 Requires: python3-keystonemiddleware >= 4.17.0
-Requires: python3-kombu
-Requires: python3-netaddr
-Requires: python3-sqlalchemy
-Requires: python3-sqlalchemy-filters
-Requires: python3-webob
+Requires: python3-kombu >= 4.3.0
+Requires: python3-netaddr >= 0.7.18
+Requires: python3-sqlalchemy >= 1.3.2
+Requires: python3-sqlalchemy-filters >= 0.10.0
+Requires: python3-webob >= 1.7.1
 Requires: python3-heatclient >= 1.10.0
 Requires: python3-keystoneclient >= 1:3.8.0
-Requires: python3-alembic
-Requires: python3-six
-Requires: python3-stevedore
+Requires: python3-alembic >= 0.9.6
+Requires: python3-stevedore >= 1.20.0
 Requires: python3-oslo-concurrency >= 3.26.0
-Requires: python3-oslo-config >= 2:5.2.0
-Requires: python3-oslo-context >= 2.19.2
+Requires: python3-oslo-config >= 2:6.8.0
+Requires: python3-oslo-context >= 2.22.0
 Requires: python3-oslo-db >= 5.0.0
 Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-messaging >= 9.3.0
 Requires: python3-oslo-middleware >= 3.31.0
-Requires: python3-oslo-policy >= 1.30.0
+Requires: python3-oslo-policy >= 3.6.0
 Requires: python3-oslo-reports >= 1.18.0
 Requires: python3-oslo-rootwrap >= 5.8.0
 Requires: python3-oslo-serialization >= 2.18.0
 Requires: python3-oslo-service >= 1.24.0
-Requires: python3-oslo-upgradecheck >= 0.1.0
-Requires: python3-oslo-utils >= 3.33.0
+Requires: python3-oslo-upgradecheck >= 1.3.0
+Requires: python3-oslo-utils >= 4.5.0
 Requires: python3-oslo-versionedobjects >= 1.33.3
-Requires: python3-mistralclient >= 3.1.0
+Requires: python3-mistralclient >= 4.2.0
 Requires: python3-neutronclient >= 6.7.0
 Requires: python3-novaclient >= 1:9.1.0
-Requires: python3-tosca-parser >= 1.6.0
-Requires: python3-heat-translator >= 2.0.0
-Requires: python3-cryptography
-Requires: python3-paramiko
-Requires: python3-pyroute2
+Requires: python3-tosca-parser >= 2.3.0
+Requires: python3-heat-translator >= 2.2.0
+Requires: python3-cryptography >= 2.7
+Requires: python3-paramiko >= 2.7.1
+Requires: python3-pyroute2 >= 0.4.21
 Requires: python3-barbicanclient >= 4.5.2
-Requires: python3-pbr
-Requires: python3-kubernetes
-Requires: python3-tooz
-Requires: python3-jsonschema
+Requires: python3-pbr >= 2.0.0
+Requires: python3-kubernetes >= 11.0.0
+Requires: python3-tooz >= 1.58.0
+Requires: python3-jsonschema >= 3.2.0
 
-Requires: python3-paste
-Requires: python3-paste-deploy
-Requires: python3-anyjson
+Requires: python3-paste >= 2.0.2
+Requires: python3-paste-deploy >= 1.5.0
+Requires: python3-anyjson >= 0.3.3
 Requires: python3-PyYAML
 Requires: python3-openstacksdk >= 0.44.0
-Requires: python3-rfc3986 >= 1.1.0
+Requires: python3-rfc3986 >= 1.2.0
+Requires: python3-setuptools >= 21.0.0
+Requires: python3-yaml >= 5.1
+Requires: python3-amqp >= 2.4.0
+Requires: python3-PyMySQL >= 0.10.1
 
 %description -n python3-%{pypi_name}
 %{common_desc}
