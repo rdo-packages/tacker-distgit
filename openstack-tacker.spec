@@ -7,8 +7,8 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 %global with_doc 1
 
 Name:           openstack-%{pypi_name}
-Version:        3.0.0
-Release:        2%{?dist}
+Version:        3.0.1
+Release:        1%{?dist}
 Summary:        OpenStack Tacker Service
 
 License:        ASL 2.0
@@ -291,6 +291,9 @@ exit 0
 %endif
 
 %changelog
+* Thu Jul 29 2021 RDO <dev@lists.rdoproject.org> 3.0.1-1
+- Update to 3.0.1
+
 * Wed Sep 30 2020 Javier Peña <jpena@redhat.com> - 3.0.0-2
 - Add sqlalchemy-filters as a requirement
 
