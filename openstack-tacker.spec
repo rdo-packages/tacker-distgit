@@ -93,7 +93,7 @@ Summary:        OpenStack Tacker Service
 
 Requires: python3-routes >= 2.3.1
 Requires: python3-castellan >= 0.16.0
-Requires: python3-eventlet >= 0.18.2
+Requires: python3-eventlet >= 0.30.1
 Requires: python3-glance-store >= 2.4.0
 Requires: python3-requests >= 2.25.1
 Requires: python3-keystonemiddleware >= 4.17.0
@@ -116,7 +116,7 @@ Requires: python3-oslo-policy >= 3.6.0
 Requires: python3-oslo-reports >= 1.18.0
 Requires: python3-oslo-rootwrap >= 5.8.0
 Requires: python3-oslo-serialization >= 2.18.0
-Requires: python3-oslo-service >= 1.24.0
+Requires: python3-oslo-service >= 2.5.0
 Requires: python3-oslo-upgradecheck >= 1.3.0
 Requires: python3-oslo-utils >= 4.8.0
 Requires: python3-oslo-versionedobjects >= 1.33.3
@@ -136,14 +136,13 @@ Requires: python3-jsonschema >= 3.2.0
 
 Requires: python3-paste >= 2.0.2
 Requires: python3-paste-deploy >= 1.5.0
-Requires: python3-anyjson >= 0.3.3
-Requires: python3-PyYAML
+Requires: python3-PyYAML >= 5.4.1
 Requires: python3-openstacksdk >= 0.44.0
 Requires: python3-rfc3986 >= 1.2.0
 Requires: python3-setuptools >= 21.0.0
-Requires: python3-yaml >= 5.1
 Requires: python3-amqp >= 2.4.0
 Requires: python3-PyMySQL >= 0.10.1
+Requires: python3-oslo-privsep >= 2.4.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
