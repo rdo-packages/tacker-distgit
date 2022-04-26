@@ -1,0 +1,13 @@
+diff --git a/tacker/tests/unit/test_privsep.py b/tacker/tests/unit/test_privsep.py
+index f2906fb1..7f1a252f 100644
+--- a/tacker/tests/unit/test_privsep.py
++++ b/tacker/tests/unit/test_privsep.py
+@@ -43,7 +43,7 @@ class PrivsepTest(base.BaseTestCase):
+     def setUp(self):
+         super(PrivsepTest, self).setUp()
+ 
+-    @unittest.skipIf(_PWD == _PWD_ZUUL or os.getlogin() != 'stack',
++    @unittest.skipIf(_PWD == _PWD_ZUUL or getpass.getuser() != 'stack',
+             "Failed on zuul or non-devstack env for root privilege")
+     def test_privsep_ls(self):
+         """Run ls with root privilege
