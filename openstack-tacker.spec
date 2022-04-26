@@ -63,14 +63,14 @@ BuildRequires:  python3-hacking
 BuildRequires:  python3-mock
 BuildRequires:  python3-oslotest
 BuildRequires:  python3-glance-store
-# For Fedora, the ostestr binary is provided by the %{__python3} subpackage
-BuildRequires:  /usr/bin/ostestr
+BuildRequires:  python3-stestr
 BuildRequires:  python3-sqlalchemy-filters
 BuildRequires:  python3-subunit
 BuildRequires:  python3-tackerclient
 BuildRequires:  python3-tempest
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testtools
+BuildRequires:  python3-ddt
 
 BuildRequires:  python3-webtest
 BuildRequires:  python3-PyYAML
@@ -250,8 +250,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-s
 install -p -D -m 644 %{SOURCE3} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-conductor.service
 
 %check
-#FIXME(ykarel) Enable once https://bugs.launchpad.net/tacker/+bug/1753645 is fixed.
-#OS_TEST_PATH=./tacker/tests/unit ostestr --black-regex ipv6
+OS_TEST_PATH=./tacker/tests/unit stestr run --black-regex ipv6
 
 %pre common
 getent group %{pypi_name} >/dev/null || groupadd -r %{pypi_name}
