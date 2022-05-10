@@ -25,8 +25,6 @@ Source101:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_nam
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
-Patch0001:      0001-replace-os-getlogin-method.patch
-
 BuildArch:      noarch
 
 # Required for tarball sources verification
