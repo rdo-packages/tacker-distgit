@@ -73,6 +73,7 @@ BuildRequires:  python3-testtools
 BuildRequires:  python3-ddt
 BuildRequires:  python3-requests-mock
 BuildRequires:  python3-oslo-upgradecheck
+BuildRequires:  python3-freezegun
 
 BuildRequires:  python3-webtest
 BuildRequires:  python3-yaml
