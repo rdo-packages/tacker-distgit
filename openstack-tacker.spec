@@ -101,6 +101,7 @@ Requires: python3-keystonemiddleware >= 4.17.0
 Requires: python3-kombu >= 4.3.0
 Requires: python3-netaddr >= 0.7.18
 Requires: python3-sqlalchemy >= 1.3.2
+Requires: python3-sqlalchemy < 1.4.0
 Requires: python3-sqlalchemy-filters >= 0.10.0
 Requires: python3-webob >= 1.7.1
 Requires: python3-heatclient >= 1.10.0
