@@ -253,7 +253,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-s
 install -p -D -m 644 %{SOURCE3} %{buildroot}%{_unitdir}/openstack-%{pypi_name}-conductor.service
 
 %check
-OS_TEST_PATH=./tacker/tests/unit stestr run --black-regex 'ipv6|vnfm|vnflcm|sol_refactored'
+OS_TEST_PATH=./tacker/tests/unit stestr run --exclude-regex 'ipv6|vnfm|vnflcm|sol_refactored'
 
 %pre common
 getent group %{pypi_name} >/dev/null || groupadd -r %{pypi_name}
