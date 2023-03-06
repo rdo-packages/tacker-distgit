@@ -297,6 +297,7 @@ exit 0
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
+%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/prometheus-plugin.yaml
 %config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/%{pypi_name}.filters
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
