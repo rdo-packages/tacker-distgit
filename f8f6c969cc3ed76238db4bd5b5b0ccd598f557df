@@ -16,6 +16,46 @@
       "message": "FTR mistralclient was removed since [1]\n\n[1] https://review.opendev.org/c/openstack/tacker/+/875324\n",
       "revId": "f8f6c969cc3ed76238db4bd5b5b0ccd598f557df",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4be614df_b4bb8609",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-08-03T10:54:37Z",
+      "side": 1,
+      "message": "just a minor issue",
+      "revId": "f8f6c969cc3ed76238db4bd5b5b0ccd598f557df",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4c3407a_ac0b973b",
+        "filename": "openstack-tacker.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-08-03T10:54:37Z",
+      "side": 1,
+      "message": "we can clean up this conditional",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "f8f6c969cc3ed76238db4bd5b5b0ccd598f557df",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
