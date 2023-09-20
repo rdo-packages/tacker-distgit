@@ -1,5 +1,6 @@
+%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
 %global pypi_name tacker
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
@@ -15,13 +16,17 @@ OpenStack Tacker Service is an NFV Orchestrator for OpenStack
 %global with_doc 1
 
 Name:           openstack-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        10.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        OpenStack Tacker Service
 
 License:        Apache-2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.opendev.org/openstack/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+#
+# patches_base=10.0.0.0rc1
+#
+
 Source1:        openstack-tacker-server.service
 Source2:        tacker.logrotate
 Source3:        openstack-tacker-conductor.service
@@ -229,3 +234,6 @@ exit 0
 %endif
 
 %changelog
+* Wed Sep 20 2023 RDO <dev@lists.rdoproject.org> 10.0.0-0.1.0rc1
+- Update to 10.0.0.0rc1
+
