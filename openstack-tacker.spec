@@ -229,3 +229,4 @@ exit 0
 %endif
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/tacker/commit/7488cc7b7739240071251c6ba135b9d01ace4294
