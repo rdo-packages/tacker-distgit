@@ -75,7 +75,6 @@ Requires:   python3-%{pypi_name} = %{version}-%{release}
 
 Requires:  python3-cliff
 Requires:  python3-fixtures
-Requires:  python3-mock
 Requires:  python3-oslotest
 Requires:  python3-os-testr
 Requires:  python3-subunit
