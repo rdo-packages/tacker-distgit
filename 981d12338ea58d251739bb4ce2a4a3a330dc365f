@@ -1,0 +1,8 @@
+Workflow+1: Karolina Kula <kkula@redhat.com>
+Code-Review+2: Karolina Kula <kkula@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 28 Feb 2025 15:03:27 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/tacker-distgit/+/56616
+Project: openstack/tacker-distgit
+Branch: refs/heads/rpm-master
