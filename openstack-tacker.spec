@@ -154,7 +154,6 @@ install -d -m 755 %{buildroot}%{_localstatedir}/log/%{pypi_name}
 # Move config files to proper location
 install -d -m 755 %{buildroot}%{_sysconfdir}/%{pypi_name}
 mv %{buildroot}/usr/etc/%{pypi_name}/* %{buildroot}%{_sysconfdir}/%{pypi_name}
-mv %{buildroot}/usr/etc/rootwrap.d %{buildroot}%{_sysconfdir}
 install -p -D -m 640 etc/%{pypi_name}.conf %{buildroot}%{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
 
 # Install logrotate
@@ -213,9 +212,7 @@ exit 0
 %doc README.rst
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/%{pypi_name}.conf
-%config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/rootwrap.conf
 %config(noreplace) %attr(0640, root, %{pypi_name}) %{_sysconfdir}/%{pypi_name}/prometheus-plugin.yaml
-%config(noreplace) %attr(0644, root, root) %{_sysconfdir}/rootwrap.d/%{pypi_name}.filters
 %config(noreplace) %{_sysconfdir}/logrotate.d/openstack-%{pypi_name}
 %dir %attr(0750, %{pypi_name}, root) %{_localstatedir}/log/%{pypi_name}
 %dir %{_sharedstatedir}/%{pypi_name}
